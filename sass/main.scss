@@ -37,7 +37,7 @@ body {
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
-    width: 100vw;
+    max-width: 100vw;
     background-color: var(--Light-Grayish-Blue);
 }
 
@@ -246,8 +246,6 @@ body {
                     }
                 }
             }
-
-            
         }
     }
 
