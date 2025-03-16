@@ -15,6 +15,7 @@ html {
   font-size: 62.5%;
 }
 
+/* Fonts */
 body {
   box-sizing: border-box;
   font-size: 1.3rem;
@@ -22,14 +23,260 @@ body {
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--Light-Grayish-Blue);
 }
 
-.footer .attribution {
+.main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Button activate share options */
+.preview {
+  width: 33rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  margin: 3rem 0;
+}
+.preview header {
+  width: 100%;
+  height: auto;
+}
+.preview header figure {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.preview header figure img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  object-position: 0 -1.6rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.preview section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  padding: 0 3.6rem;
+}
+.preview section .heading {
+  font-size: 1.6rem;
+  color: var(--Very-Dark-Grayish-Blue);
+  line-height: 1.5;
+}
+.preview section .subheading {
+  color: var(--Desaturated-Dark-Blue);
+  line-height: 1.5;
+}
+.preview section footer {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  padding-bottom: 2rem;
+  margin-top: 1.8rem;
+  position: relative;
+}
+.preview section footer .author-avatar {
+  width: 4rem;
+  height: 4rem;
+}
+.preview section footer .author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.preview section footer .details {
+  flex-grow: 1;
+}
+.preview section footer .details__author-name {
+  font-weight: 600;
+  color: var(--Very-Dark-Grayish-Blue);
+}
+.preview section footer .details__published-at {
+  color: var(--Grayish-Blue);
+}
+.preview section footer .button-share {
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.3rem;
+  height: 3.3rem;
+  position: relative;
+  background-color: var(--Light-Grayish-Blue);
+}
+.preview section footer .button-share svg {
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+}
+.preview section footer .button-share svg {
+  fill: var(--Desaturated-Dark-Blue);
+}
+.preview section footer .button-share--active {
+  background-color: var(--Desaturated-Dark-Blue);
+}
+.preview section footer .button-share--active svg {
+  fill: var(--Light-Grayish-Blue);
+}
+.preview section footer .sharing {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 16.5rem);
+  background-color: var(--Very-Dark-Grayish-Blue);
+  color: var(--Grayish-Blue);
+  width: 33rem;
+  height: 6.5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 0 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.preview section footer .sharing--hidden {
+  display: none;
+}
+.preview section footer .sharing__options {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 2rem;
+  gap: 1.5rem;
+}
+.preview section footer .sharing__options .icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+.preview section footer .sharing .button-share {
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.3rem;
+  height: 3.3rem;
+  position: relative;
+  background-color: var(--Desaturated-Dark-Blue);
+}
+.preview section footer .sharing .button-share svg {
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+}
+.preview section footer .sharing .button-share svg {
+  fill: var(--Light-Grayish-Blue);
+}
+@media screen and (min-width: 912px) {
+  .preview section footer .sharing {
+    border-radius: 1rem;
+    height: unset;
+    width: 25rem;
+    padding: 1.8rem 3.5rem;
+    bottom: unset;
+    top: -8rem;
+    left: 60%;
+  }
+  .preview section footer .sharing .button-share {
+    display: none;
+  }
+  .preview section footer .sharing .arrow {
+    width: 2.5rem;
+    height: 1.4rem;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    position: absolute;
+    bottom: -1.4rem;
+    left: 11rem;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+}
+@media screen and (min-width: 912px) {
+  .preview {
+    width: 73rem;
+    flex-direction: row;
+    gap: 0;
+  }
+  .preview header {
+    height: auto;
+    width: fit-content;
+  }
+  .preview header figure {
+    height: 27.9rem;
+    width: 28.4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .preview header figure img {
+    height: 100%;
+    width: auto;
+    border-radius: unset;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    object-fit: cover;
+    object-position: 0 0;
+  }
+  .preview section {
+    justify-content: center;
+    padding: unset;
+    padding-left: 4rem;
+    padding-right: 4.7rem;
+    gap: 1rem;
+  }
+  .preview section .heading {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+  .preview section footer {
+    padding: unset;
+    margin-top: 1rem;
+  }
+  .preview section footer .author-avatar {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.footer {
+  padding: 3rem 0;
+}
+.footer__attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.footer__attribution__info {
   font-size: 11px;
   text-align: center;
 }
-.footer .attribution a {
+.footer__attribution__info a {
   color: hsl(228, 45%, 44%);
+}
+@media screen and (min-width: 768px) {
+  .footer__attribution {
+    flex-direction: row;
+    gap: 3rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
