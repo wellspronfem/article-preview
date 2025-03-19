@@ -7,7 +7,7 @@
     --Light-Grayish-Blue: hsl(210, 46%, 95%);
 }
 
-$breakpoint-md: 768px;
+$breakpoint-md: 640px;
 $breakpoint-lg: 912px;
 
 * {
@@ -41,6 +41,10 @@ body {
     background-color: var(--Light-Grayish-Blue);
 }
 
+h1, h2 {
+    font-weight: 700;
+}
+
 .main {
     flex-grow: 1;
     display: flex;
@@ -59,6 +63,8 @@ body {
     width: $size;
     height: $size;
     position: relative;
+    cursor: pointer;
+    transition: color .2s ease-in-out;
 
     svg {
         color: transparent;
@@ -89,8 +95,19 @@ body {
     }
 }
 
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .preview {
-    width: 33rem;
+    $width: 33rem;
+    width: $width;
 
     display: flex;
     flex-direction: column;
@@ -141,7 +158,7 @@ body {
         }
 
         footer {
-            display: flex;            
+            display: flex;
             align-items: center;
             gap: 1.8rem;
             padding-bottom: 2rem;
@@ -164,8 +181,9 @@ body {
             .details {
                 flex-grow: 1;
                 &__author-name {
-                    font-weight: 600;
+                    font-size: 1.3rem;
                     color: var(--Very-Dark-Grayish-Blue);
+                    margin-bottom: .2rem;
                 }
                 &__published-at {
                     color: var(--Grayish-Blue);
@@ -178,15 +196,19 @@ body {
 
             .sharing {
                 &--hidden {
+                    opacity: 0;
                     display: none;
                 }
 
+                animation: fade-in .2s forwards ease-in-out;
+
                 position: absolute;
+                opacity: 1;
                 bottom: 0;
-                left: calc(50% - 16.5rem);
+                left: calc(50% - $width / 2);
                 background-color: var(--Very-Dark-Grayish-Blue);
                 color: var(--Grayish-Blue);
-                width: 33rem;
+                width: $width;
                 height: 6.5rem;
                 border-bottom-left-radius: 1rem;
                 border-bottom-right-radius: 1rem;
@@ -224,26 +246,60 @@ body {
                 @media screen and (min-width: $breakpoint-lg) {
                     border-radius: 1rem;
                     height: unset;
-                    width: 25rem;
+                    $width: 25rem;
+                    width: $width;
                     padding: 1.8rem 3.5rem;
 
                     bottom: unset;
                     top: -8rem;
-                    left: calc(60%);
+                    left: calc(61%);
 
                     .button-share {
                         display: none;
                     }
 
                     .arrow {
-                        width: 2.5rem;
+                        $arrowWidth: 2.5rem;
+                        width: $arrowWidth;
                         height: 1.4rem;
                         background-color: var(--Very-Dark-Grayish-Blue);
                         position: absolute;
-                        bottom: -1.4rem;
-                        left: calc(12.5rem - 1.5rem);
+                        bottom: -1.3rem;
+                        left: calc($width / 2 - $arrowWidth / 2);
                         clip-path: polygon(0 0, 100% 0, 50% 100%);
                     }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+        $width: 50rem;
+        width: $width;
+
+        header {
+            height: auto;
+
+            figure {
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 32rem;
+                }
+            }
+        }
+
+        section {
+            .heading {
+                font-size: 2rem;
+                line-height: 1.4;
+            }
+
+            footer {
+                .sharing {
+                    width: $width;
+                    left: calc(50% - $width / 2);
                 }
             }
         }
