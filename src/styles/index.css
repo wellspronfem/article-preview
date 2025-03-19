@@ -32,8 +32,14 @@ body {
   background-color: var(--Light-Grayish-Blue);
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-weight: 700;
+}
+
+h1 {
+  position: absolute;
+  top: -10rem;
+  opacity: 0;
 }
 
 .main {
@@ -52,7 +58,7 @@ h1, h2 {
     opacity: 1;
   }
 }
-.preview {
+.article-preview {
   width: 33rem;
   display: flex;
   flex-direction: column;
@@ -62,16 +68,16 @@ h1, h2 {
   margin: 3rem 0;
   box-shadow: 0 0 3rem 0.1rem var(--Grayish-Blue);
 }
-.preview header {
+.article-preview header {
   width: 100%;
   height: auto;
 }
-.preview header figure {
+.article-preview header figure {
   width: 100%;
   height: auto;
   position: relative;
 }
-.preview header figure img {
+.article-preview header figure img {
   width: 100%;
   height: 20rem;
   object-fit: cover;
@@ -79,22 +85,22 @@ h1, h2 {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
-.preview section {
+.article-preview section {
   display: flex;
   flex-direction: column;
   gap: 1.3rem;
   padding: 0 3.6rem;
 }
-.preview section .heading {
+.article-preview section .heading {
   font-size: 1.6rem;
   color: var(--Very-Dark-Grayish-Blue);
   line-height: 1.5;
 }
-.preview section .subheading {
+.article-preview section .subheading {
   color: var(--Desaturated-Dark-Blue);
   line-height: 1.5;
 }
-.preview section footer {
+.article-preview section footer {
   display: flex;
   align-items: center;
   gap: 1.8rem;
@@ -102,28 +108,28 @@ h1, h2 {
   margin-top: 1.8rem;
   position: relative;
 }
-.preview section footer .author-avatar {
+.article-preview section footer .author-avatar {
   width: 4rem;
   height: 4rem;
 }
-.preview section footer .author-avatar img {
+.article-preview section footer .author-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
-.preview section footer .details {
+.article-preview section footer .details {
   flex-grow: 1;
 }
-.preview section footer .details__author-name {
+.article-preview section footer .details__author-name {
   font-size: 1.3rem;
   color: var(--Very-Dark-Grayish-Blue);
   margin-bottom: 0.2rem;
 }
-.preview section footer .details__published-at {
+.article-preview section footer .details__published-at {
   color: var(--Grayish-Blue);
 }
-.preview section footer .button-share {
+.article-preview section footer .button-share {
   border: none;
   border-radius: 50%;
   display: flex;
@@ -136,25 +142,25 @@ h1, h2 {
   background-color: var(--Light-Grayish-Blue);
 }
 @media screen and (min-width: 912px) {
-  .preview section footer .button-share {
+  .article-preview section footer .button-share {
     transition: background-color 0.2s ease-in-out;
   }
 }
-.preview section footer .button-share svg {
+.article-preview section footer .button-share svg {
   color: transparent;
   width: 2.1rem;
   height: 2.1rem;
 }
-.preview section footer .button-share svg {
+.article-preview section footer .button-share svg {
   fill: var(--Desaturated-Dark-Blue);
 }
-.preview section footer .button-share--active {
+.article-preview section footer .button-share--active {
   background-color: var(--Desaturated-Dark-Blue);
 }
-.preview section footer .button-share--active svg {
+.article-preview section footer .button-share--active svg {
   fill: var(--Light-Grayish-Blue);
 }
-.preview section footer .sharing {
+.article-preview section footer .sharing {
   animation: fade-in 0.2s forwards ease-in-out;
   position: absolute;
   opacity: 1;
@@ -174,25 +180,25 @@ h1, h2 {
   text-transform: uppercase;
   letter-spacing: 4px;
 }
-.preview section footer .sharing--hidden {
+.article-preview section footer .sharing--hidden {
   opacity: 0;
   display: none;
 }
-.preview section footer .sharing__options {
+.article-preview section footer .sharing__options {
   flex-grow: 1;
   display: flex;
   justify-content: flex-start;
   padding-left: 2rem;
   gap: 1.5rem;
 }
-.preview section footer .sharing__options .icon-button {
+.article-preview section footer .sharing__options .icon-button {
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
   background-color: transparent;
 }
-.preview section footer .sharing .button-share {
+.article-preview section footer .sharing .button-share {
   border: none;
   border-radius: 50%;
   display: flex;
@@ -205,20 +211,20 @@ h1, h2 {
   background-color: var(--Desaturated-Dark-Blue);
 }
 @media screen and (min-width: 912px) {
-  .preview section footer .sharing .button-share {
+  .article-preview section footer .sharing .button-share {
     transition: background-color 0.2s ease-in-out;
   }
 }
-.preview section footer .sharing .button-share svg {
+.article-preview section footer .sharing .button-share svg {
   color: transparent;
   width: 2.1rem;
   height: 2.1rem;
 }
-.preview section footer .sharing .button-share svg {
+.article-preview section footer .sharing .button-share svg {
   fill: var(--Light-Grayish-Blue);
 }
 @media screen and (min-width: 912px) {
-  .preview section footer .sharing {
+  .article-preview section footer .sharing {
     border-radius: 1rem;
     height: unset;
     width: 25rem;
@@ -227,10 +233,10 @@ h1, h2 {
     top: -8rem;
     left: 61%;
   }
-  .preview section footer .sharing .button-share {
+  .article-preview section footer .sharing .button-share {
     display: none;
   }
-  .preview section footer .sharing .arrow {
+  .article-preview section footer .sharing .arrow {
     width: 2.5rem;
     height: 1.4rem;
     background-color: var(--Very-Dark-Grayish-Blue);
@@ -241,45 +247,45 @@ h1, h2 {
   }
 }
 @media screen and (min-width: 640px) and (max-width: 912px) {
-  .preview {
+  .article-preview {
     width: 50rem;
   }
-  .preview header {
+  .article-preview header {
     height: auto;
   }
-  .preview header figure {
+  .article-preview header figure {
     overflow: hidden;
   }
-  .preview header figure img {
+  .article-preview header figure img {
     width: 100%;
     height: 32rem;
   }
-  .preview section .heading {
+  .article-preview section .heading {
     font-size: 2rem;
     line-height: 1.4;
   }
-  .preview section footer .sharing {
+  .article-preview section footer .sharing {
     width: 50rem;
     left: calc(50% - 25rem);
   }
 }
 @media screen and (min-width: 912px) {
-  .preview {
+  .article-preview {
     width: 73rem;
     flex-direction: row;
     gap: 0;
   }
-  .preview header {
+  .article-preview header {
     height: auto;
     width: fit-content;
   }
-  .preview header figure {
+  .article-preview header figure {
     height: 27.9rem;
     width: 28.4rem;
     position: relative;
     overflow: hidden;
   }
-  .preview header figure img {
+  .article-preview header figure img {
     height: 100%;
     width: auto;
     border-radius: unset;
@@ -288,22 +294,22 @@ h1, h2 {
     object-fit: cover;
     object-position: 0 0;
   }
-  .preview section {
+  .article-preview section {
     justify-content: center;
     padding: unset;
     padding-left: 4rem;
     padding-right: 4.7rem;
     gap: 1rem;
   }
-  .preview section .heading {
+  .article-preview section .heading {
     font-size: 2rem;
     line-height: 1.4;
   }
-  .preview section footer {
+  .article-preview section footer {
     padding: unset;
     margin-top: 1rem;
   }
-  .preview section footer .author-avatar {
+  .article-preview section footer .author-avatar {
     width: 4rem;
     height: 4rem;
   }

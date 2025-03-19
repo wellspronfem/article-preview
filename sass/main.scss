@@ -41,8 +41,14 @@ body {
     background-color: var(--Light-Grayish-Blue);
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-weight: 700;
+}
+
+h1 {
+    position: absolute;
+    top: -10rem;
+    opacity: 0;
 }
 
 .main {
@@ -108,7 +114,7 @@ h1, h2 {
     }
 }
 
-.preview {
+.article-preview {
     $width: 33rem;
     width: $width;
 
