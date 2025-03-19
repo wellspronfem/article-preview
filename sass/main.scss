@@ -70,10 +70,6 @@ h1 {
     height: $size;
     position: relative;
     cursor: pointer;
-    
-    @media screen and (min-width: $breakpoint-lg) {
-        transition: background-color .2s ease-in-out;
-    }
 
     svg {
         color: transparent;
@@ -101,6 +97,10 @@ h1 {
         svg {
             fill: var(--Light-Grayish-Blue);
         }
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+        transition: background-color .2s ease-in-out;
     }
 }
 
@@ -206,11 +206,6 @@ h1 {
             }
 
             .sharing {
-                &--hidden {
-                    opacity: 0;
-                    display: none;
-                }
-
                 animation: fade-in .2s forwards ease-in-out;
 
                 position: absolute;
@@ -233,6 +228,11 @@ h1 {
                 font-size: 1.4rem;
                 text-transform: uppercase;
                 letter-spacing: 4px;
+
+                &--hidden {
+                    opacity: 0;
+                    display: none;
+                }
 
                 &__options {
                     flex-grow: 1;

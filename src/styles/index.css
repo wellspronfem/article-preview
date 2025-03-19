@@ -141,11 +141,6 @@ h1 {
   cursor: pointer;
   background-color: var(--Light-Grayish-Blue);
 }
-@media screen and (min-width: 912px) {
-  .article-preview section footer .button-share {
-    transition: background-color 0.2s ease-in-out;
-  }
-}
 .article-preview section footer .button-share svg {
   color: transparent;
   width: 2.1rem;
@@ -159,6 +154,11 @@ h1 {
 }
 .article-preview section footer .button-share--active svg {
   fill: var(--Light-Grayish-Blue);
+}
+@media screen and (min-width: 912px) {
+  .article-preview section footer .button-share {
+    transition: background-color 0.2s ease-in-out;
+  }
 }
 .article-preview section footer .sharing {
   animation: fade-in 0.2s forwards ease-in-out;
@@ -210,11 +210,6 @@ h1 {
   cursor: pointer;
   background-color: var(--Desaturated-Dark-Blue);
 }
-@media screen and (min-width: 912px) {
-  .article-preview section footer .sharing .button-share {
-    transition: background-color 0.2s ease-in-out;
-  }
-}
 .article-preview section footer .sharing .button-share svg {
   color: transparent;
   width: 2.1rem;
@@ -222,6 +217,11 @@ h1 {
 }
 .article-preview section footer .sharing .button-share svg {
   fill: var(--Light-Grayish-Blue);
+}
+@media screen and (min-width: 912px) {
+  .article-preview section footer .sharing .button-share {
+    transition: background-color 0.2s ease-in-out;
+  }
 }
 @media screen and (min-width: 912px) {
   .article-preview section footer .sharing {
