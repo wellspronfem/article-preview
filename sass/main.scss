@@ -64,7 +64,10 @@ h1, h2 {
     height: $size;
     position: relative;
     cursor: pointer;
-    transition: color .2s ease-in-out;
+    
+    @media screen and (min-width: $breakpoint-lg) {
+        transition: background-color .2s ease-in-out;
+    }
 
     svg {
         color: transparent;
@@ -117,6 +120,8 @@ h1, h2 {
     border-radius: 1rem;
 
     margin: 3rem 0;
+
+    box-shadow: 0 0 3rem .1rem var(--Grayish-Blue);
 
     header {
         width: 100%;

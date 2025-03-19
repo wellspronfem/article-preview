@@ -60,6 +60,7 @@ h1, h2 {
   background-color: white;
   border-radius: 1rem;
   margin: 3rem 0;
+  box-shadow: 0 0 3rem 0.1rem var(--Grayish-Blue);
 }
 .preview header {
   width: 100%;
@@ -132,8 +133,12 @@ h1, h2 {
   height: 3.3rem;
   position: relative;
   cursor: pointer;
-  transition: color 0.2s ease-in-out;
   background-color: var(--Light-Grayish-Blue);
+}
+@media screen and (min-width: 912px) {
+  .preview section footer .button-share {
+    transition: background-color 0.2s ease-in-out;
+  }
 }
 .preview section footer .button-share svg {
   color: transparent;
@@ -197,8 +202,12 @@ h1, h2 {
   height: 3.3rem;
   position: relative;
   cursor: pointer;
-  transition: color 0.2s ease-in-out;
   background-color: var(--Desaturated-Dark-Blue);
+}
+@media screen and (min-width: 912px) {
+  .preview section footer .sharing .button-share {
+    transition: background-color 0.2s ease-in-out;
+  }
 }
 .preview section footer .sharing .button-share svg {
   color: transparent;
